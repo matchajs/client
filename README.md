@@ -11,28 +11,41 @@
 
 ###Client.browser
 
-`name` {String} 浏览器名
+`name` {String} 浏览器名称
+
 `version` {Number} 浏览器版本
+
 `fullVersion` {String} 浏览器完整版本
+
 `compatible` {Boolean} 是否兼容模式
+
 
 
 ###Client.engine
 
-`name` {String} 渲染引擎名
+`name` {String} 渲染引擎名称
+
 `version` {Number} 渲染引擎版本号
+
 `fullVersion` {String} 渲染引擎完整版本号
+
 
 
 ###Client.os
 
 `name` {String} 系统名称
+
 `version` {Number} 系统版本号
+
 `fullVersion` {String} 系统完整版本号
+
 
 
 ###Client.device
 
 `name` {String} 设备名称
+
 `version` {Number} 设备版本号
+
 `fullVersion` {String} 设备完整版本号
+
