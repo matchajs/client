@@ -20,6 +20,8 @@
 `compatible` {Boolean} 是否兼容模式
 
 
+---
+
 
 ###Client.engine
 
@@ -30,6 +32,8 @@
 `fullVersion` {String} 渲染引擎完整版本号
 
 
+---
+
 
 ###Client.os
 
@@ -39,6 +43,8 @@
 
 `fullVersion` {String} 系统完整版本号
 
+
+---
 
 
 ###Client.device
