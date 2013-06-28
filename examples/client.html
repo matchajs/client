@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>client examples</title>
+<script src="http://matchajs.org/source/seajs/2.0.0/sea.js"></script>
+</head>
+
+<body>
+<div id="J-client"></div>
+
+<script>
+seajs.config({
+    path: {
+        utility: 'http://matchajs.org/source/utility'
+    },
+    alias: {
+        'jquery': 'utility/jquery/1.9.1/jquery'
+    }
+});
+seajs.use(['jquery', '../src/client'], function($, Client) {
+    var osVer2osName = {
+        '6.1': 'windows 7',
+    };
+
+    var rowHtml = '';
+
+    rowHtml += '<p>userAgent:' + window.navigator.userAgent + '</p><p>&nbsp;</p>';
+    rowHtml += '<p>硬件设备:' + Client.device.name + '</p>';
+    rowHtml += '<p>操作系统:' + Client.os.name + ' ' + Client.os.fullVersion + '</p>';
+
+    var browserCompatibleMode = '';
+    if (Client.browser.compatible) {
+        browserCompatibleMode = '(' + Client.browser.fullMode + ' 兼容模式)';
+    }
+    rowHtml += '<p>浏览器:' + Client.browser.name + ' ' + Client.browser.fullVersion + browserCompatibleMode + '</p>';
+
+    var engineCompatibleMode = '';
+    if (Client.engine.compatible) {
+        engineCompatibleMode = '(' + Client.engine.fullMode + ' 兼容模式)';
+    }
+    rowHtml += '<p>渲染引擎:' + Client.engine.name + ' ' + Client.engine.fullVersion + engineCompatibleMode + '</p>';
+
+    $('#J-client').html(rowHtml);
+});
+</script>
+</body>
+</html>
