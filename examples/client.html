@@ -20,14 +20,39 @@ seajs.config({
 });
 seajs.use(['jquery', '../src/client'], function($, Client) {
     var osVer2osName = {
-        '6.1': 'windows 7',
+        'pc': {
+            '4':  'Windows 95',
+            '4.1': 'Windows 98',
+            '4.9': 'Windows ME',
+            // 5.0
+            '5':  'Windows 2000',
+            '5.1':  'Windows XP',
+            '5.2':  'Windows Server 2003',
+            // 6.0
+            '6':  'Windows Vista',
+            '6.1':  'Windows 7',
+            '6.2':  'Windows 8',
+            '6.3':  'Windows Blue'
+        },
+        'mac': {
+            '10': 'Mac OS X Cheetah',
+            '10.1': 'Mac OS X Puma',
+            '10.2': 'Mac OS X Jaguar',
+            '10.3': 'Mac OS X Panther',
+            '10.4': 'Mac OS X Tiger',
+            '10.5': 'Mac OS X Leopard',
+            '10.6': 'Mac OS X Snow Leopard',
+            '10.7': 'Mac OS X Lion',
+            '10.8': 'Mac OS X Mountain Lion',
+            '10.9': 'Mac OS X Mavericks'
+        }
     };
 
     var rowHtml = '';
 
-    rowHtml += '<p>userAgent:' + window.navigator.userAgent + '</p><p>&nbsp;</p>';
+    rowHtml += '<p>userAgent: ' + window.navigator.userAgent + '</p>';
     rowHtml += '<p>硬件设备:' + Client.device.name + '</p>';
-    rowHtml += '<p>操作系统:' + Client.os.name + ' ' + Client.os.fullVersion + '</p>';
+    rowHtml += '<p>操作系统:' + osVer2osName[Client.device.name][Client.os.version] + '</p>';
 
     var browserCompatibleMode = '';
     if (Client.browser.compatible) {

@@ -18,18 +18,19 @@ define(function(require, exports, module) {
             ['ipad', 'ipad'],
             ['ipod', 'ipod'],
             ['iphone', 'iphone'],
+            ['samsung', 'samsung'],
             ['nexus', 'nexus'],
             ['mi', /mi-one plus/],
             ['meizu', function() {
-                if (userAgent.indexOf('meizu mx') != -1 || /m(?:\d+)/.test(userAgent)) {
-                    return true;
+                if (userAgent.indexOf('meizu mx') !== -1) {
+                    return 'mx';
                 }
-                return false;
+                return /m(?:\d+)/.exec(userAgent);
             }],
             ['android', 'android'],
             ['wp', /windows (?:phone|ce)/],
             ['chrome', 'cros i686'],
-            ['nokia', 'nokia'],
+            ['nokia', /nokia([\da-z\-]+)/],
             ['blackberry', 'blackberry']
         ],
         os: [
@@ -41,7 +42,8 @@ define(function(require, exports, module) {
             ['chromeos', /cros i686 ([\d.]+)/],
             ['wp', /windows phone(?: os)? ([\d.]+)/],
             ['windowsce', 'windows ce'],
-            ['symbian', /symbianos\/([\d.]+)/],
+            ['meego', 'meego'],
+            ['symbian', /symbianos.*series([\d]+)\//],
             ['blackberry', 'blackberry']
         ],
         browser: [
@@ -86,6 +88,7 @@ define(function(require, exports, module) {
 
                 return false;
             }],
+            ['nokia', /nokiabrowser\/([\d.]+)/],
             ['opera', function() {
                 var match, operaRegular;
 
@@ -194,7 +197,6 @@ define(function(require, exports, module) {
                 if (userAgent.indexOf(expression) === -1) {
                     return false;
                 }
-                //tmpVer = 1;
                 break;
             case '[object RegExp]':
                 var match = expression.exec(userAgent);
@@ -246,10 +248,15 @@ define(function(require, exports, module) {
         }
 
         // 设备
-        process('device', function(name) {
+        process('device', function(name, version) {
             client.device = {
                 name: name
             };
+
+            if (version) {
+                client.device.version = version;
+                client.device.fullVersion = version;
+            }
 
             client.device[name] = true;
         });

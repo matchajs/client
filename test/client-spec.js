@@ -182,6 +182,17 @@ define(function(require) {
                 engine: 'n:webkit|v:535.19|c:0'
             }
         },
+        // Samsung GT-I9500 Chrome
+        {
+            title: 'Samsung GT-I9500',
+            ua: 'Mozilla/5.0 (Linux; Android 4.2.2; th-th; SAMSUNG GT-I9500 Build/JDQ39) AppleWebKit/535.19 (KHTML like Gecko) Version/1.0 Chrome/18.0.1025.308 Mobile Safari/535.19',
+            answer: {
+                device: 'n:samsung',
+                os: 'n:android|v:4.2.2',
+                browser: 'n:chrome|v:18.0.1025.308|c:0',
+                engine: 'n:webkit|v:535.19|c:0'
+            }
+        },
 
 
 
@@ -563,7 +574,7 @@ define(function(require) {
 
 
 
-        // iPhone 新浪微博 Webview
+        // iPhone Webview
         {
             title: 'iPhone 新浪微博 Webview',
             ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.40 (KHTML, like Gecko) Mobile/11A4400f',
@@ -585,48 +596,48 @@ define(function(require) {
                 engine: 'n:webkit|v:537.40|c:0'
             }
         },
-        // iPhone QQ客户端 Webview
-        {
-            title: 'iPhone QQ客户端 Webview',
-            ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.40 (KHTML, like Gecko) Mobile/11A4400f',
-            answer: {
-                device: 'n:iphone',
-                os: 'n:ios|v:7.0',
-                browser: 'n:webview|v:null|c:0',
-                engine: 'n:webkit|v:537.40|c:0'
-            }
-        },
         // iPad Webview
         {
             title: 'iPad Webview',
-            ua: 'Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/98176',
+            ua: 'Mozilla/5.0 (iPad; CPU OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329',
             answer: {
                 device: 'n:ipad',
-                os: 'n:ios|v:5.1',
+                os: 'n:ios|v:6.1.3',
                 browser: 'n:webview|v:null|c:0',
-                engine: 'n:webkit|v:534.46|c:0'
+                engine: 'n:webkit|v:536.26|c:0'
             }
         },
         // iPhone UC浏览器
-        /*{
-            title: 'iPhone UC浏览器',
-            ua: 'Mozilla/5.0 (X11; U; Linux i686; zh-CN; rv:1.2.3.4) Gecko/',
-            answer: {
-                device: 'n:nexus',
-                os: 'n:android|v:4.0.2',
-                browser: 'n:safari|v:4.0|c:0',
-                engine: 'n:webkit|v:534.30|c:0'
-            }
-        },*/
-
-
-        // SymbianOS
         {
-            title: 'SymbianOS',
-            ua: 'Mozilla/5.0 (SymbianOS/9.1; U; en-us) AppleWebKit/413 (KHTML like Gecko) Safari/413',
+            title: 'iPhone UC浏览器',
+            ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X; zh-CN) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329 UCBrowser/9.0.1.284 Mobile',
             answer: {
-                device: null,
-                os: 'n:symbian|v:9.1',
+                device: 'n:iphone',
+                os: 'n:ios|v:6.1.3',
+                browser: 'n:uc|v:9.0.1.284|c:0',
+                engine: 'n:webkit|v:536.26|c:0'
+            }
+        },
+
+
+        // Nokia N82
+        {
+            title: 'Nokia N82',
+            ua: 'Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 NokiaN82/31.0.016; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413',
+            answer: {
+                device: 'n:nokia|v:n82',
+                os: 'n:symbian|v:60',
+                browser: null,
+                engine: 'n:webkit|v:413|c:0'
+            }
+        },
+        // Nokia N95
+        {
+            title: 'Nokia N95',
+            ua: 'Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 NokiaN95/11.0.026; Profile MIDP-2.0 Configuration/CLDC-1.1) AppleWebKit/413 (KHTML, like Gecko) Safari/413',
+            answer: {
+                device: 'n:nokia|v:n95',
+                os: 'n:symbian|v:60',
                 browser: null,
                 engine: 'n:webkit|v:413|c:0'
             }
@@ -708,7 +719,7 @@ define(function(require) {
             title: '魅族 M030',
             ua: 'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M030 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/4.2.191',
             answer: {
-                device: 'n:meizu',
+                device: 'n:meizu|v:m030',
                 os: 'n:android|v:4.0.3',
                 browser: 'n:safari|v:4.0|c:0',
                 engine: 'n:webkit|v:534.30|c:0'
@@ -719,10 +730,22 @@ define(function(require) {
             title: '魅族 MX 11316',
             ua: 'Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
             answer: {
-                device: 'n:meizu',
+                device: 'n:meizu|v:mx',
                 os: 'n:android|v:2.3.5',
                 browser: 'n:safari|v:4.0|c:0',
                 engine: 'n:webkit|v:533.1|c:0'
+            }
+        },
+
+        // Nokia N9
+        {
+            title: 'Nokia N9',
+            ua: 'Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13',
+            answer: {
+                device: 'n:nokia|v:n9',
+                os: 'n:meego|v:null',
+                browser: 'n:nokia|v:8.5.0|c:0',
+                engine: 'n:webkit|v:534.13|c:0'
             }
         }
     ];
@@ -742,7 +765,7 @@ define(function(require) {
 
                         if (clientInfo[k]) {
                             var result = ['n:' + clientInfo[k].name];
-                            if (k !== 'device') {
+                            if (clientInfo[k].fullVersion !== undefined) {
                                 result.push('v:' + clientInfo[k].fullVersion);
                             }
 
