@@ -9,28 +9,14 @@
 
 ##使用说明
 
-###Client.browser
+###Client.device
 
-`name` {String} 浏览器名称
+`name` {String} 设备名称
 
-`version` {Number} 浏览器版本
-
-`fullVersion` {String} 浏览器完整版本
-
-`compatible` {Boolean} 是否兼容模式
+`fullVersion` {String} 设备完整版本号
 
 
----
-
-
-###Client.engine
-
-`name` {String} 渲染引擎名称
-
-`version` {Number} 渲染引擎版本号
-
-`fullVersion` {String} 渲染引擎完整版本号
-
+Client.device[deviceName] {Boolean} 直接判断某设备
 
 ---
 
@@ -43,15 +29,38 @@
 
 `fullVersion` {String} 系统完整版本号
 
+Client.device[osName] {Boolean} 直接判断某系统
 
 ---
 
 
-###Client.device
+###Client.browser
 
-`name` {String} 设备名称
+`name` {String} 浏览器名称
 
-`version` {Number} 设备版本号
+`version` {Number} 浏览器版本
 
-`fullVersion` {String} 设备完整版本号
+`fullVersion` {String} 浏览器版本
+
+`mode` {Number} 浏览器模式
+
+`fullMode` {String} 浏览器完整模式
+
+`compatible` {Boolean} 是否兼容模式
+
+Client.device[browserName] {Boolean} 直接判断某浏览器
+
+---
+
+
+###Client.engine
+
+`name` {String} 渲染引擎名称
+
+`version` {Number} 渲染引擎版本号
+
+`fullVersion` {String} 渲染引擎完整版本号
+
+`compatible` {Boolean} 是否兼容模式
+
 
