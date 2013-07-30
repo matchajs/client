@@ -16,7 +16,7 @@
 `fullVersion` {String} 设备完整版本号
 
 
-Client.device[deviceName] {Boolean} 直接判断某设备
+`Client.device[deviceName]` {Boolean} 直接判断某设备
 
 ---
 
@@ -29,7 +29,7 @@ Client.device[deviceName] {Boolean} 直接判断某设备
 
 `fullVersion` {String} 系统完整版本号
 
-Client.device[osName] {Boolean} 直接判断某系统
+`Client.device[osName]` {Boolean} 直接判断某系统
 
 ---
 
@@ -48,7 +48,7 @@ Client.device[osName] {Boolean} 直接判断某系统
 
 `compatible` {Boolean} 是否兼容模式
 
-Client.device[browserName] {Boolean} 直接判断某浏览器
+`Client.device[browserName]` {Boolean} 直接判断某浏览器
 
 ---
 
